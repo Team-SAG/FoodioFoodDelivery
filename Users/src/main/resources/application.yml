@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: User
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/FoodioUser
+    username: root
+    password: root
+
+  jpa:
+    show-sql: true
+    hibernate:
+        ddl-auto: update
+
+
+
+server:
+  port: 8080
+

@@ -1,6 +1,6 @@
 package Foodio.Users.Model;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -9,7 +9,13 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class User {
-    public String name;
-    public String email;
+public class User extends BaseEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long userId;
+    @Column(unique = true)
+    public String username;
+    public String password;
+    public String role;
 }
